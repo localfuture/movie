@@ -64,8 +64,8 @@ app.get("/getdata",(req,res)=>{
 });
 
 
-const display = "http://localhost:3000/getdata";
-//const display = "https://movielibdata.herokuapp.com/getdata";
+//const display = "http://localhost:3000/getdata";
+const display = "https://movielibdata.herokuapp.com/getdata";
 	
 app.get("/view",(req,res)=>{
     request(display,(error,Response,body)=>{
