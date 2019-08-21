@@ -10,7 +10,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-mongoose.connect("mongodb://localhost:27017/movieDB",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://anand:unicornb1331@cluster0-ubp68.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true});
 
 const movieschema = mongoose.Schema({
     movie: String,
@@ -58,7 +58,7 @@ app.get("/getdata",(req,res)=>{
 });
 
 
-const display = "http://localhost:3000/getdata";
+const display = "https://movielibdata.herokuapp.com/getdata";
 
 app.get("/view",(req,res)=>{
     request(display,(error,Response,body)=>{
@@ -83,7 +83,7 @@ app.get("/sea/:y",(req,res)=>{
 });
 
 
-const sea = "http://localhost:3000/sea/";
+const sea = "https://movielibdata.herokuapp.com/sea/";
 
 app.post("/find",(req,res)=>{
     var x = req.body.name;
@@ -113,7 +113,7 @@ app.get("/delet/:id",(req,res)=>{
 })
 
 
-const dele = "http://localhost:3000/delet/";
+const dele = "https://movielibdata.herokuapp.com/delet/";
 
 
 app.post("/del",(req,res)=>{
