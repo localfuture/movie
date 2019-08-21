@@ -1,0 +1,38 @@
+<%- include('header'); %>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">movie</th>
+        <th scope="col">producer</th>
+        <th scope="col">director</th>
+        <th scope="col">actor</th>
+        <th scope="col">actress</th>
+        <th scope="col">year</th>
+        <th scope="col">language</th>
+        <th scope="col">editor</th>
+        <th scope="col">camera</th>
+        <th scope="col">dist</th>
+      </tr>
+    </thead>
+    <tbody>
+       <% for( var i=0; i< data.length; i++){%>
+      <tr>
+            <th scope="col"><%=data[i].movie%></th>
+            <th scope="col"><%=data[i].producer%></th>
+            <th scope="col"><%=data[i].director%></th>
+            <th scope="col"><%=data[i].actor%></th>
+            <th scope="col"><%=data[i].actress%></th>
+            <th scope="col"><%=data[i].year%></th>
+            <th scope="col"><%=data[i].language%></th>
+            <th scope="col"><%=data[i].editor%></th>
+            <th scope="col"><%=data[i].camera%></th>
+            <th scope="col"><%=data[i].dist%></th>
+      </tr>
+      <%}%>
+
+    </tbody>
+  </table>
+
+
+<%- include('footer'); %>

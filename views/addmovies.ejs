@@ -1,0 +1,92 @@
+<%- include('header'); %>
+<!-- add movies form -->
+
+<div class="container">
+    <form action="/add" method="POST">
+        <div class="row">
+          <div class="col">
+            <label>Movie </label>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" name="movie">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+              <label>producer</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" name="producer">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>director</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" name="director">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>actor</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" name="actor">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>actress</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" name="actress">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>release year</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" name="year">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>Language</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" name="language">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>editor</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" name="editor">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>cinematographer</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" name="camera">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>distributor</label>
+            </div>
+            <div class="col">
+              <input type="text" class="form-control" name="dist">
+            </div>
+          </div>
+          <button class="btn btn-primary btn-sm" type="reset">Reset</button>
+          <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+         
+          
+      </form>
+</div>
+<%- include('footer'); %>
