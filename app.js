@@ -9,9 +9,11 @@ const app = express();
 app.set('view engine','ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-
+//mongoose.connect("mongodb://localhost:27017/movieDB",{useNewUrlParser: true});
+	
+//mongoose.connect("mongodb+srv://anand:unicornb1331@cluster0-ubp68.mongodb.net/test?retryWrites=true&w=majority");
 mongoose.connect("mongodb+srv://anand:unicornb1331@cluster0-ubp68.mongodb.net/test?retryWrites=true&w=majority");
-
+	
 const movieschema = mongoose.Schema({
     movie: String,
     producer: String,
@@ -36,13 +38,17 @@ app.get("/add",(req,res)=>{
     res.render('addmovies',{title:"Add Movies"});
 });
 
-app.post("/add",(req,res)=>{
+app.post("/addition",(req,res)=>{
  var movie = new movieCollection(req.body);
- movie.save((error)=>{
+ movie.save((error,data)=>{
      if(error){
          console.log('error occured');
+         res.send(error);
+
      }else {
         console.log('Movie Added');
+        res.send(data);
+
      }
  });
 });
@@ -58,8 +64,9 @@ app.get("/getdata",(req,res)=>{
 });
 
 
-const display = "https://movielibdata.herokuapp.com/getdata";
-
+const display = "http://localhost:3000/getdata";
+//const display = "https://movielibdata.herokuapp.com/getdata";
+	
 app.get("/view",(req,res)=>{
     request(display,(error,Response,body)=>{
         console.log("Error :", error);
