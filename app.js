@@ -10,7 +10,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-mongoose.connect("mongodb+srv://anand:unicornb1331@cluster0-ubp68.mongodb.net/test?retryWrites=true&w=majority",{useNewUrlParser: true});
+mongoose.connect("mongodb+srv://anand:unicornb1331@cluster0-ubp68.mongodb.net/test?retryWrites=true&w=majority");
 
 const movieschema = mongoose.Schema({
     movie: String,
